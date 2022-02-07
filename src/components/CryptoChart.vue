@@ -97,7 +97,7 @@ export default {
           .map(trade => ({
             x: trade.time,
             y: trade[this.yValue],
-            type: trade.alert ? 'Alert' : (trade.buy ? 'Buy' : 'Sell'),
+            type: trade.alert_buy ? 'Buy Alert' : (trade.alert_sell ? 'Sell Alert' : (trade.alert ? 'Alert' : (trade.buy ? 'Buy' : 'Sell'))),
             colorIndex: trade.alert ? 0 : (trade.buy ? 1 : 2)
           }))
       }]

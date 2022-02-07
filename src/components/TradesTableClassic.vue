@@ -24,6 +24,8 @@
       </template>
       <template #cell(icon)="data">
         <fa-icon v-if="data.item.alert" icon="exclamation-triangle" v-b-tooltip.top="'Alert'" />
+        <fa-icon v-else-if="data.item.alert_buy" icon="arrow-alt-circle-left" v-b-tooltip.top="'Buy Alert'"/>
+        <fa-icon v-else-if="data.item.alert_sell" icon="arrow-alt-circle-right" v-b-tooltip.top="'Sell Alert'"/>
         <fa-icon v-else-if="data.item.buy" icon="arrow-left" variant="danger" :style="{ color: '#6a994e' }" v-b-tooltip.top="'Buy'"/>
         <fa-icon v-else icon="arrow-right" :style="{ color: '#bc4749' }" v-b-tooltip.top="'Sell'"/>
       </template>

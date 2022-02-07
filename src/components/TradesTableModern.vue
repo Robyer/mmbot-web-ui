@@ -38,11 +38,15 @@
           </div>
           <div class="col-1 text-center d-none d-md-block pt-2">
             <fa-icon v-if="item.trade.alert" icon="exclamation-triangle" :style="{ 'font-size': '1.5em' }" v-b-tooltip.top="'Alert'"/>
+            <fa-icon v-else-if="item.trade.alert_buy" icon="arrow-alt-circle-left" :style="{ 'font-size': '1.5em' }" v-b-tooltip.top="'Buy Alert'"/>
+            <fa-icon v-else-if="item.trade.alert_sell" icon="arrow-alt-circle-right" :style="{ 'font-size': '1.5em' }" v-b-tooltip.top="'Sell Alert'"/>
             <fa-icon v-else-if="item.trade.buy" icon="arrow-left" :style="{ color: '#6a994e', 'font-size': '1.5em' }" v-b-tooltip.top="'Buy'"/>
             <fa-icon v-else icon="arrow-right" variant="danger" :style="{ color: '#bc4749', 'font-size': '1.5em' }" v-b-tooltip.top="'Sell'"/>
           </div>
           <div class="col text-center mb-1 d-md-none" style="flex: 0 0 auto;">
             <fa-icon v-if="item.trade.alert" icon="exclamation-triangle" :style="{ 'font-size': '1.5em' }"/>
+            <fa-icon v-else-if="item.trade.alert_buy" icon="arrow-alt-circle-left" :style="{ 'font-size': '1.5em' }"/>
+            <fa-icon v-else-if="item.trade.alert_sell" icon="arrow-alt-circle-right" :style="{ 'font-size': '1.5em' }"/>
             <fa-icon v-else-if="item.trade.buy" icon="arrow-up" :style="{ color: '#6a994e', 'font-size': '1.5em' }"/>
             <fa-icon v-else icon="arrow-down" variant="danger" :style="{ color: '#bc4749', 'font-size': '1.5em' }"/>
           </div>

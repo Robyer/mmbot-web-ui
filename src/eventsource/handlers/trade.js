@@ -7,7 +7,9 @@ export default {
     return {
       key: dto.symbol + '' + JSON.stringify(dto.data.id),
       symbol: dto.symbol,
-      alert: dto.data.achg === 0, // && JSON.stringify(dao.data.id).startsWith('"ALERT'),
+      alert: dto.data.alert.side === 0,
+      alert_buy: dto.data.alert.side > 0,
+      alert_sell: dto.data.alert.side < 0,
       buy: dto.data.achg > 0,
       id: dto.data.id, // Rransaction id
       time: dto.data.time,
